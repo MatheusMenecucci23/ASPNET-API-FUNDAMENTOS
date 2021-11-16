@@ -52,7 +52,8 @@ namespace FilmesAPI.Controllers
             _context.Filmes.Add(filme);
             //salvando no banco de dados
             _context.SaveChanges();
-            //retornando o location o header
+            //retornando o status e o location(caminho para acessar o elemento retornado pelo RecuperarFilmesPorId) no header
+            //new {valor que será passado na rota do RecuperarFilmesPorId}
             return CreatedAtAction(nameof(RecuperarFilmesPorId), new { Id = filme.Id},filme);
         }
 
